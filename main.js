@@ -122,7 +122,7 @@ document.body.addEventListener("keydown", function(e){
 
     if (e.key == "Backspace")
     {    
-        expression = expression.slice(0, expression.length-1);
+        expression = toString(expression).slice(0, expression.length-1);
         document.getElementById("input").value = expression;
     }
 
