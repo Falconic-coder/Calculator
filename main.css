@@ -1,0 +1,44 @@
+body{
+    margin-left: 7%;
+    margin-top: 2%;
+    margin-right: 4%;
+    background-color: rgb(253, 220, 169);
+}
+
+input{
+    font-family: 'JetBrains Mono', monospace;
+    position: relative;
+    width: 90%;
+    font-size: 360%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-color: black;
+    background-color: beige;
+}
+
+button{
+    background-color: bisque;
+    font-family: 'JetBrains Mono', monospace;
+    margin-top: 15px;
+    position: relative;
+    width: 30%;
+    font-size: xx-large;
+    padding-top: 2.1%;
+    padding-bottom: 2.1%;
+}
+
+#grp5 button{
+    width: 45.1%;
+}
+
+button:hover{
+    background-color: rgb(253, 193, 104);
+}
+
+#equals{
+    background-color: rgb(253, 193, 104);
+}
+
+#equals:hover{
+    background-color: beige;;
+}
