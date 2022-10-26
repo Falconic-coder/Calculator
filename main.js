@@ -82,8 +82,7 @@ function onEqualsClick(){
     }
 
     catch{
-        document.getElementById("input").value = "Invalid Expression";
-        expression = "";
+        document.getElementById("input").value = "Invalid";
         const myTimeout = setTimeout(mathError, 1000);
 
         function mathError(){
@@ -92,6 +91,7 @@ function onEqualsClick(){
        
         expression = "";
     }
+    checkStr();
 }
 
 
@@ -109,20 +109,23 @@ document.getElementById("prd").addEventListener("click", function(){
 });
 
 
-document.body.addEventListener("keydown", function(e){ 
+document.body.addEventListener("keyup", function(e){ 
 
-    if (expression == undefined)
-        expression = "";
-
-    if ((e.key <= "9" && e.key >= "0") || e.key == "*" || e.key == "/" || e.key == "-" || e.key == "+" || e.key == ".")
-    {
-        expression += e.key;
+    if (e.key == "Backspace")
+    {   
+        expression = expression.toString().slice(0, length-1);
         document.getElementById("input").value = expression;
     }
 
-    if (e.key == "Backspace")
-    {    
-        expression = toString(expression).slice(0, expression.length-1);
+    if ((e.key <= "9" && e.key >= "0") || e.key == "*" || e.key == "/" || e.key == "-" || e.key == "+" || e.key == ".")
+    {
+        if (document.getElementById("input").value.charAt(0) == 'I')
+        {
+            expression = "";
+            document.getElementById("input").value = expression;
+        }
+
+        expression += e.key;
         document.getElementById("input").value = expression;
     }
 
@@ -152,3 +155,14 @@ document.body.addEventListener("keydown", function(e){
     }
     
 })
+
+
+function checkStr(){
+    let value = document.getElementById("input").value.toString();
+
+    if (value.charAt(0) == 'u')
+    {
+        expression = "";
+        document.getElementById("input").value = "";
+    }
+}
